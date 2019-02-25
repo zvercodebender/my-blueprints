@@ -9,11 +9,9 @@ metadata:
 parameters:
 - name: AWS_SECRET
   type: Input
-  secret: true
   description: AWS Secret?
 - name: AWS_ACCESS_KEY
   type: Input
-  secret: true
   description: What is the AWS Access Key?
 - name: AWS_REGION
   type: Input
