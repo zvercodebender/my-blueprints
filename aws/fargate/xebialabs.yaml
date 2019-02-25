@@ -1,0 +1,8 @@
+apiVersion: xl/v1
+kind: Import
+metadata:
+  imports:
+    - xebialabs/xld-configuration.yaml
+    - xebialabs/xld-rest-o-rant-ecs-fargate-cluster.yaml
+    - xebialabs/xld-rest-o-rant-ecs-service.yaml
+    - xebialabs/xlr-rest-o-rant-ecs-pipeline.yaml

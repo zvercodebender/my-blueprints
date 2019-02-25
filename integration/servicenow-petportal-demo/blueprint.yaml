@@ -1,0 +1,55 @@
+apiVersion: xl/v1
+kind: Blueprint
+metadata:
+  projectName: Extended ServiceNow Pipeline
+  description: |
+    This is a more interesting example of using XL Release to orchestrate the release of a petportal application with various Service Now tickets including change request approvals.
+  author: XebiaLabs
+  version: 1.0
+parameters:
+- name: FolderName
+  type: Input
+  default: PetPortalServiceNowExtended
+  description: What is the Folder should the XLR template be stored?
+- name: AppName
+  type: Input
+  default: PetClinic
+  description: What is the Application name?
+- name: SNOW_URL
+  type: Input
+  description: What is the Service Now URL?
+- name: SNOW_USERNAME
+  type: Input
+  saveInXlVals: true
+  default: admin
+  description: What is the Service Now User Name?
+- name: SNOW_PASSWORD
+  type: Input
+  secret: true
+  description: What is the Service Now Password?
+- name: JIRA_URL
+  type: Input
+  description: What is the JIRA URL?
+- name: JIRA_USERNAME
+  type: Input
+  saveInXlVals: true
+  description: What is the JIRA User Name?
+- name: JIRA_PASSWORD
+  type: Input
+  secret: true
+  description: What is the JIRA Password?
+- name: XL_DEPLOY_USERNAME
+  type: Input
+  default: admin
+  description: XL Deploy username?
+- name: XL_DEPLOY_PASSWORD
+  type: Input
+  default: admin
+  secret: true
+  description: XL Deploy password?
+
+
+files:
+- path: xebialabs.yaml
+- path: xebialabs/xlr-configuration.yaml.tmpl
+- path: xebialabs/xlr-pipeline.yaml.tmpl

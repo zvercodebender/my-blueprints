@@ -1,0 +1,29 @@
+---
+apiVersion: xl-deploy/v1
+kind: Infrastructure
+spec:
+- name: myAWS
+  type: core.Directory
+  children:
+  - name: aws
+    accessSecret: mhrU58euhzveBpCGKQe9dlaM2Xz/Jchccn6JkDav
+    accesskey: AKIAICTABTUNCVOGWCIQ
+    type: aws.Cloud
+---
+apiVersion: xl-deploy/v1
+kind: Environments
+spec:
+- name: myAWS
+  type: core.Directory
+  children:
+  - name: Environments/myAWS/DEV-AWS
+    type: udm.Environment
+    members:
+    - Infrastructure/myAWS/aws
+    dictionaries:
+    - Environments/myAWS/AWS-dict
+  - name: Environments/myAWS/AWS-dict
+    type: udm.Dictionary
+    entries:
+      username: rbroker
+      region: us-east-2
