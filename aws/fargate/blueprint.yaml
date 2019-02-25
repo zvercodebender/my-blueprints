@@ -14,11 +14,8 @@ parameters:
 - name: AWS_ACCESS_KEY
   type: Input
   secret: true
-  description: What is the JIRA User Name?
+  description: What is the AWS Access Key?
 - name: AWS_REGION
-  type: Input
-  description: AWS Region?
-- name: AppName
   type: Input
   default: us-east-2
   description: What is the AWS Region?
