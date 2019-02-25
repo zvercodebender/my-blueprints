@@ -1,0 +1,35 @@
+apiVersion: xl/v1
+kind: Blueprint
+metadata:
+  projectName: AWS Fargate Demo
+  description: |
+    This is a demo deploy apps to AWS Fargate and local Docker
+  author: Zvercodebender
+  version: 1.0
+parameters:
+- name: AWS_SECRET
+  type: Input
+  secret: true
+  description: AWS Secret?
+- name: AWS_ACCESS_KEY
+  type: Input
+  secret: true
+  description: What is the JIRA User Name?
+- name: AWS_REGION
+  type: Input
+  description: AWS Region?
+- name: AppName
+  type: Input
+  default: us-east-2
+  description: What is the AWS Region?
+- name: namePrefix
+  type: Input
+  default: rbroker
+  description: What is the username base?
+
+files:
+- path: xebialabs/xld-environment.yaml.tmpl
+- path: xebialabs/xld-rest-o-rant-ecs-fargate-cluster.yaml
+- path: xebialabs/xld-rest-o-rant-ecs-service.yaml
+- path: xebialabs/xlr-rest-o-rant-ecs-pipeline.yaml
+- path: xebialabs.yaml
